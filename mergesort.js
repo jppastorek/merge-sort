@@ -1,6 +1,8 @@
 let array = [2, 7, 5, 3, 9, 1, 8, 4, 6, 10, 12, 11]
+let array2 = [1, 3, 3, 2, -6, -42, 0, 5, -16]
 
-mergeSort(array);
+console.log(mergeSort(array));
+console.log(mergeSort(array2));
 
 
 function mergeSort(array) {
@@ -24,6 +26,14 @@ function merge(left, right) {
         }else {
             sortedArray.push(right.shift());
         }
+    }
+
+    while (right.length) {
+        sortedArray.push(right.shift());
+    }
+
+    while (left.length) {
+        sortedArray.push(left.shift());
     }
     
     return sortedArray;
